@@ -1,31 +1,44 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class DonarAddScreen extends StatefulWidget {
-  const DonarAddScreen({super.key});
+class EditScreen extends StatefulWidget {
+  const EditScreen({super.key});
 
   @override
-  State<DonarAddScreen> createState() => _DonarAddScreenState();
+  State<EditScreen> createState() => _EditScreenState();
 }
+
 final CollectionReference donar = FirebaseFirestore.instance.collection('donor');
 List<String> bloodGroupList = ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'Others'];
 
+
+
 var choosedBloodGroup ;
+
 final bloodGroupController=TextEditingController();
 final nameController = TextEditingController();
 final ageController =TextEditingController();
 
-class _DonarAddScreenState extends State<DonarAddScreen> {
+
+
+class _EditScreenState extends State<EditScreen> {
   List<DropdownMenuItem<Object>> genderListObject = bloodGroupList
       .map((valueItem) =>
           DropdownMenuItem(value: valueItem, child: Text(valueItem)))
       .toList();
 
+
   @override
   Widget build(BuildContext context) {
+
+    final args = ModalRoute.of(context)!.settings.arguments as Map;
+    nameController.text = args['name'];
+    ageController.text = args['age'];
+    bloodGroupController.text = args['group'];
+    
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Your Details'),
+        title: const Text('Edit Your Details'),
         centerTitle: true,
       ),
       body: Column(
@@ -68,22 +81,18 @@ class _DonarAddScreenState extends State<DonarAddScreen> {
             ),
           ),
           ElevatedButton(onPressed: (){
-            addDonarClicked();
-
+            editButtonClicked();
           },
-          style: ElevatedButton.styleFrom(padding: const EdgeInsets.only(right: 100,left: 100,top: 15,bottom: 15)), child:  const Text('Add Donar',style:TextStyle(fontSize: 20),),)
+          style: ElevatedButton.styleFrom(padding: const EdgeInsets.only(right: 100,left: 100,top: 15,bottom: 15)), child:  const Text('Edit Details',style:TextStyle(fontSize: 20),),)
         ],
       ),
     );
   }
   
-  void addDonarClicked() {
+  void editButtonClicked() {
     final name = nameController.text.trim();
     final age = ageController.text.trim();
     final group = bloodGroupController.text;
-
     final data = {'name':name,'age':age,'group':group};
-    donar.add(data);
-    Navigator.pop(context);
-  }
-}
+   
+  }}
