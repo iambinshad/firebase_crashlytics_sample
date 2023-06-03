@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "499111649148",
-    "project_id": "b-donate",
-    "storage_bucket": "b-donate.appspot.com"
+    "project_number": "396590491646",
+    "project_id": "fir-crashlytics-174ca",
+    "storage_bucket": "fir-crashlytics-174ca.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:499111649148:android:bc89fda5353ac14f8c4ef9",
+        "mobilesdk_app_id": "1:396590491646:android:1bbc67f216bdba0929c2af",
         "android_client_info": {
           "package_name": "com.example.b_donate"
         }
       },
       "oauth_client": [
         {
-          "client_id": "499111649148-08p4j9rvu20f3osm6ivbdlglp5iu8coc.apps.googleusercontent.com",
+          "client_id": "396590491646-qn245b1bu3rt6c16u0rp3contkcgakkd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCphZGXJXFfh4Aej33mvroE_kw_Lln9TFI"
+          "current_key": "AIzaSyAMeVSkP16PVgdeVHCAObsBR2fV1wWy1Z4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "499111649148-08p4j9rvu20f3osm6ivbdlglp5iu8coc.apps.googleusercontent.com",
+              "client_id": "396590491646-qn245b1bu3rt6c16u0rp3contkcgakkd.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
